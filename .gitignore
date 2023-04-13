@@ -1,6 +1,6 @@
 *.js
 !jest.config.js
-!prettierrc.js
+!.prettierrc.js
 *.d.ts
 node_modules
 
