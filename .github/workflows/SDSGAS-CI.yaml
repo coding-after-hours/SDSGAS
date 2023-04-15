@@ -9,13 +9,17 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
-      - name: Install Node.js v18
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          path: main
+      - name: Use Node.js v18
         uses: actions/setup-node@v3
         with:
           node-version: 18
       - name: Install Dependencies
         run: npm ci
-      - name: Run Linters
-        run: npm run verify-format
+      - name: Run linters
+        run: npm run verify-forma
       - name: Run Tests
         run: npm run test
