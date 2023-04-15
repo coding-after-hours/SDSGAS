@@ -1,0 +1,21 @@
+name: SDSGAS-CI
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+jobs:
+  build:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Node.js v18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Linters
+        run: npm run verify-format
+      - name: Run Tests
+        run: npm run test
