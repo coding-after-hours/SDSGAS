@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-        with:
-          path: main
       - name: Use Node.js v18
         uses: actions/setup-node@v3
         with:
@@ -20,6 +18,6 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Run linters
-        run: npm run verify-forma
+        run: npm run verify-format
       - name: Run Tests
         run: npm run test
