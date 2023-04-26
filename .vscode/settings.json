@@ -1,4 +1,5 @@
 {
 	"prettier.enable": true,
-	"prettier.configPath": "./.prettierrc.js"
+	"prettier.configPath": "./.prettierrc.js",
+	"eslint.enable": true
 }
