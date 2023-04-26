@@ -11,7 +11,7 @@
 		"cdk": "cdk",
 		"format": "prettier . --write",
 		"verify-format": "prettier . --check",
-		"lint": "npx eslint ."
+		"lint": "eslint ."
 	},
 	"devDependencies": {
 		"@types/jest": "^29.4.0",
