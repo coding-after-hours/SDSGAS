@@ -1,16 +1,16 @@
 import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
+
+import * as lambda from 'aws-cdk/aws-lambda-nodejs';
+import * as path from 'path';
+
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class SdsgasStack extends cdk.Stack {
-	constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+	constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
 		super(scope, id, props);
 
-		// The code that defines your stack goes here
-
-		// example resource
-		// const queue = new sqs.Queue(this, 'SdsgasQueue', {
-		//   visibilityTimeout: cdk.Duration.seconds(300)
-		// });
+		const helloLambda = new lambda.NodejsFunction(this, 'MyLambda', {
+			entry: path.join(__dirname, '../functions/index.ts'),
+		});
 	}
 }
